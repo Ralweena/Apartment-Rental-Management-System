@@ -1,0 +1,242 @@
+@font-face {
+  font-family: Lucida;
+  src: url(sansation_light.woff);
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: cursive;
+}
+
+body {
+	background: #adefd1ff;
+}
+
+/*-------------------Popup Window-----------------*/
+/* 
+.modal-dialog {
+	width: 430px;
+}
+
+.modal-header {
+	background: #00203fff;
+	color: #adefd1ff;
+}
+
+button{
+	background: #00203fff;
+}
+
+.fa-xmark {
+	color: #adefd1ff;
+	background: #00203fff;
+}
+
+.modal-body img {
+	width: 400px;
+	height: 200px;
+	padding: 0;
+	margin: 0;
+} */
+
+/*------------------Actual Window-----------------*/
+
+.payment header {
+	position: fixed;
+	width: 100%;
+	background: #00203fff;
+}
+
+.payment header a {
+	text-decoration: none;
+	color: #ADEFD1FF;
+}
+
+.payment header p {
+	color: #ADEFD1FF;
+	font-size: 26px;
+	padding: 10px 0 0 35px;
+	font-family: Lucida;
+}
+
+.payment .fa-arrow-left {
+	padding-right: 30px;
+	font-size: 30px;
+}
+
+.payment .fa-credit-card {
+	padding-right: 10px;
+}
+
+.payment .payment-box {
+	position: fixed;
+	top: 40px;
+	width: 100%;
+}
+
+/*---------Personal details----------*/
+
+table {
+  font-family: cursive;
+  border-collapse: collapse;
+  width: 1100px;
+  background: transparent;
+  color: #000;
+  position: relative;
+  margin-top: 35px;
+  left: calc(50% - 550px);
+  font-size: 18px;
+  }
+
+th {
+  border: 1px solid black;
+  text-align: center;
+  padding: 5px 0 5px 0;
+
+}
+
+td {
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	text-align: center;
+}
+
+.tr7 {
+	border-bottom: 1px solid black;
+}
+
+.name {
+	padding-top: 9px;
+}
+
+input[type="text"], input[type="number"], input[type="email"], input[type="month"] {
+	border: none;
+	background: transparent;
+	outline: none;
+	border-bottom: 1px solid black;
+	margin-left: 20px;
+	height: 30px;
+	font-size: 18px;
+	font-family: Lucida;
+}
+
+input[type="month"] {
+	width: 150px;
+}
+
+.user-details .if1, .user-details .if2 {
+	width: 280px;
+}
+
+.user-details .if3, .user-details .if5, .user-details .if6,
+.user-details .if7 {
+	width: 200px;
+}
+
+.user-details .if4 {
+	width: 140px;
+}
+
+.user-details .if8 {
+	width: 80px;
+}
+
+.user-details .l8 {
+	margin-left: 40px;
+}
+
+.payment-box .pay-btn, .payment-box .cancel-btn {
+	background: #00203fff;
+	color: #adefd1ff;
+	height: 40px;
+	font-size: 20px;
+	border-radius: 10%;
+	margin-top: 20px;
+	text-align: center;
+}
+
+.payment-box .pay-btn {
+	width: 80px;
+	margin-left: 460px;
+}
+
+.payment-box .cancel-btn {
+	width: 100px;
+	margin-left: 120px;
+}
+
+.payment-box button:hover {
+	font-weight: bold;
+	color: ghostwhite;
+}
+
+/*---------Flashed message---------*/
+
+.msg {
+	font-size: 22px;
+	color: #fff;
+	background-color: #000;
+	border: 1px solid #00203FFF;
+	width: 500px;
+	height: 150px;
+	text-align: center;
+	padding-top: 59px;
+	position: fixed;
+	top: calc(50% - 75px);
+	left: calc(50% - 250px);
+	z-index: 9;
+    -webkit-animation: cssAnimation 5s forwards; 
+    animation: cssAnimation 5s forwards;
+}
+
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+	80%   {opacity: 0.8;}
+	90%  {opacity: 0.3;}
+    100% {opacity: 0;}
+}
+
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+	80%   {opacity: 0.8;}
+	90%  {opacity: 0.3;}
+    100% {opacity: 0;}
+}
+
+/*----------Error Msg------*/
+
+.error {
+	font-size: 20px;
+	color: #fff;
+	background-color: #000;
+	border: 1px solid #00203FFF;
+	width: 500px;
+	height: 80px;
+	text-align: center;
+	padding-top: 22px;
+	position: fixed;
+	top: calc(50% - 75px);
+	left: calc(50% - 200px);
+	z-index: 9;
+  -webkit-animation: cssAnimation 5s forwards; 
+  animation: cssAnimation 5s forwards;
+}
+
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+	80%   {opacity: 0.8;}
+	90%  {opacity: 0.3;}
+    100% {opacity: 0;}
+}
+
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+	80%   {opacity: 0.8;}
+	90%  {opacity: 0.3;}
+    100% {opacity: 0;}
+}

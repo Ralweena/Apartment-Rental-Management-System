@@ -1,0 +1,163 @@
+@font-face {
+  font-family: Lucida;
+  src: url(sansation_light.woff);
+}
+
+body {
+	top: 0;
+	left: 0;
+	padding: 90px 110px 80px 110px;
+	font-family: 'Times New Roman', Times, serif;
+	background: #ADEFD1FF;
+	color: black;
+	font-size: 18px;
+}
+
+nav {
+	position: fixed;
+	width: 100%;
+	top: 0;
+	left: 0;
+	background: #00203FFF;
+	padding: 16px 0 16px 35px;
+	margin: 0;
+}
+
+.back {
+	text-decoration: none;
+	color: #ADEFD1FF;
+	font-family: Lucida;
+	font-size: 28px;
+}
+
+.fa-arrow-left {
+	padding-right: 10px;
+}
+
+.box {
+	border: 2px solid black;
+	padding-right: 80px;
+	padding-left: 80px;
+	text-align: justify;
+	line-height: 1.6;
+}
+
+h4 {
+	padding-top: 0;
+	font-size: 32px;
+	text-align: center;
+}
+
+.owner-info, .tenant-info {
+	padding-left:120px;
+}
+
+input[type="date"], input[type="email"], input[type="number"]{
+	border: none;
+	outline: none;
+	background: transparent;
+	border-bottom: 1px solid black;
+	margin-left: 12px;
+	margin-right: 12px;
+	font-family: Lucida;
+}
+
+input[type="date"]{
+	font-size: 16px;
+}
+
+.if1, .if2, .if3, .if4{
+	border: none;
+	outline: none;
+	background: transparent;
+	border-bottom: 1px solid black;
+	font-size: 18px;
+	font-family: Lucida;
+}
+
+.if1, .if2, input[type="email"] {
+	width: 250px;
+	margin-left: 0;
+	font-size: 16px;
+}
+
+.if2, .if4, .if5 {
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+.if4 {
+	width: 390px;
+	font-size: 16px;
+}
+
+.if3 {
+	font-size: 18px;
+}
+
+.if5, .if6 {
+	width: 60px;
+	text-align: center;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.if7 {
+	width: 100px;
+}
+
+.btn, .reset {
+background: #00203FFF;
+  color: #ADEFD1FF;
+  padding: 16px 20px;
+  border: 1px solid #000;
+  border-radius: 10%;
+  cursor: pointer;
+  width: 100px;
+  height: 60px;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 20px;
+  box-shadow: 2px 2px 8px #000;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.btn:hover, .reset:hover {
+	color: ghostwhite;
+	font-weight: bold;
+}
+
+.btn {
+  margin:0 150px 60px 270px;
+}
+
+.msg {
+	font-size: 22px;
+	color: #fff;
+	background-color: #000;
+	border: 1px solid #00203FFF;
+	width: 400px;
+	height: 50px;
+	text-align: center;
+	padding-top: 22px;
+	position: fixed;
+	top: calc(50% - 75px);
+	left: calc(50% - 200px);
+	z-index: 9;
+    -webkit-animation: cssAnimation 5s forwards; 
+    animation: cssAnimation 5s forwards;
+}
+
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+	80%   {opacity: 0.8;}
+	90%  {opacity: 0.3;}
+    100% {opacity: 0;}
+}
+
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+	80%   {opacity: 0.8;}
+	90%  {opacity: 0.3;}
+    100% {opacity: 0;}
+}

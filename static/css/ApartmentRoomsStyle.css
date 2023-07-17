@@ -1,0 +1,290 @@
+@font-face {
+  font-family: Algerian;
+  font-family: Lucida;
+  src: url(sansation_light.woff);
+}
+
+
+*{
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	box-sizing: border-box;
+  font-family: cursive;
+}
+
+body {
+  background: #ADEFD1FF;
+  color: #00203FFF;
+}
+
+a {
+  text-decoration: none;
+  color: #ADEFD1FF;
+}
+
+
+/* navbar styling */
+.navbar {
+  background: transparent;
+  background-size: auto;
+  display: inline;
+}
+
+.navbar .nav-bar {
+  display: inline-block;
+  list-style: none;
+}
+
+.rooms {
+  padding-top: 30px;
+  padding-left: 35px;
+  font-size: 36px;
+  font-family: 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.search {
+  padding-left: 320px;
+  padding-bottom: 80px;
+}
+
+.search input[type="number"] {
+  background: transparent;
+  height: 25px;
+  width: 210px;
+  color: black;
+  outline: none;
+  border: none;
+  font-size: 18px;
+  border-bottom: 2px solid #00203FFF;
+  margin-right: 25px;
+}
+
+.crud {
+  margin-left: 700px;
+}
+
+/* buttons*/
+.crud li, .nav-bar li {
+  margin-top: -10px;
+  display: inline-block;
+  list-style: outside none none;
+}
+
+.next, .previous {
+  font-size: 30px;
+  color: #00203FFF;
+}
+
+.previous {
+  margin-left: 80px;
+}
+
+.next {
+  margin-left: 50px; 
+}
+
+.operations {
+  width: 140px;
+  height: 60px;
+  background: #00203FFF;
+  border: 1px solid black;
+  color: #ADEFD1FF;
+  border-radius: 10%;
+  margin-left: 20px;
+  text-align: center;
+  font-size: 20px;
+  font-family: Lucida;
+}
+
+.operations:hover a {
+  color: ghostwhite;
+  font-weight: bold;
+}
+
+.operations:hover {
+  color: ghostwhite;
+  font-weight: bold;
+}
+
+.fa-plus {
+  font-size: 24px;
+  padding-left: 10px;
+}
+
+.fa-pen-to-square, .fa-trash {
+  font-size: 20px;
+  padding-left: 8px;
+}
+
+/* The popup form - hidden by default */
+
+.form-popup, .add-form-popup {
+  display: none;
+  position: absolute;
+  top: 115px;
+  left: calc(50% - 310px);
+  z-index: 9;
+}
+
+.add-form-popup {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Add styles to the form container */
+.form-container, .add-form-container {
+  width: 620px;
+  height: auto;
+  padding: 30px 10px 40px 20px;
+  background-color: #00203FFF;
+  color: #ADEFD1FF;
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 6px #fff;
+}
+
+.add-form-container {
+  margin-bottom: 40px;
+}
+
+.heading {
+  font-size: 28px;
+  text-align: center;
+  font-family: Lucida;
+}
+
+.divider-custom {
+  text-align: center;
+  padding-bottom: 40px;
+}
+
+.apartment-info {
+  font-family: cursive;
+  font-size: 16px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 0px;
+}
+
+.input-field input[type="text"], input[type="number"]
+{
+    border: none;
+    border-bottom: 1px solid ghostwhite;
+    background: transparent;
+    outline: none;
+    height: 24px;
+    color: ghostwhite;
+    font-size: 18px;
+    font-family: Lucida;
+    margin-bottom: 25px;
+}
+
+textarea {
+  border: none;
+  border-bottom: 1px solid ghostwhite;
+  background: transparent;
+  outline: none;color: ghostwhite;
+  font-size: 18px;
+  font-family: Lucida;
+}
+
+.input-field input[type="text"] {
+  width: 170px;
+}
+
+.input-field input[type="number"] {
+  width: 90px;
+}
+
+.input-field .l1 {
+  padding-left: 30px;
+}
+
+.input-field .l2 {
+  padding-left: 70px;
+}
+
+.input-field p {
+  padding: 20px 30px;
+}
+
+.input-field .Desc {
+  margin-top: -30px;
+}
+
+.input-field #apartmentTitle {
+  width: 400px;
+}
+
+#up_title {
+  width:340px;
+}
+
+/* Set a style for the submit/login button */
+
+.form-container .btn, .form-container .cancel ,.add-form-container .btn, .add-form-container .cancel {
+  background-color: #ADEFD1FF;
+  color: #000;
+  padding: 10px 20px;
+  border: 1px solid #000;
+  border-radius: 10%;
+  cursor: pointer;
+  width: 95px;
+  height: 48px;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 18px;
+  box-shadow: 2px 2px 4px #000;
+}
+
+.btn {
+  margin:0 35px 0 160px;
+}
+
+/* flexboxes for images */
+
+table {
+  border-collapse: separate;
+  border-spacing: 0 85px;
+  display: block; 
+  width: 900px;   
+  margin-left: 280px;
+}
+
+tr {
+  border: 2px solid #fff;
+  background-color: #00203FFF;  
+  color: #ADEFD1FF;
+}
+
+td {
+  height: 300px;
+  padding: 20px 50px 20px 20px;
+}
+
+#box #image {
+  width: 220px;
+  height: 220px; 
+  margin: 20px 60px 0 20px;
+  float: left;  
+  border-radius: 10px;
+}
+
+#image img {  
+  width: 220px;
+  height: 220px; 
+  border-radius: 10px;
+  border: 2px solid #fff;
+}
+
+.details {
+  padding: 10px;
+}
+
+#apartmentDetails {
+  margin-top: 30px;
+}

@@ -1,0 +1,163 @@
+@font-face {
+  font-family: Lucida;
+  src: url(sansation_light.woff);
+}
+
+body {
+	padding: 0;
+	margin: 0;
+}
+
+.box {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	margin: 0;
+	padding: 0;
+	background-image: url('/static/images/adminBg.jpg');
+	background-color: #00203FFF;
+	background-size: cover;
+	background-position: center center;
+}
+
+.navbar {
+  position: fixed;
+  padding-top: 23px; 
+  background:  #00203FFF;
+  width: 100%;
+  padding-bottom: 20px;
+}
+
+.lead {
+	font-size: 24px;
+	font-family: Lucida;
+	color: #ADEFD1FF;
+	margin-left: 35px;
+	text-decoration: none;
+}
+
+i {
+	padding-right: 5px;
+}
+
+.loginbox {
+	width: 380px;
+	height: 470px;
+	background: #00203FFF;
+	color: #ADEFD1FF;
+	border-radius: 5%;
+	border: 1px solid ghostwhite;
+	box-shadow: 2px 2px 8px skyblue;
+	position: absolute;
+	top: 80px;
+	right: 95px;
+	box-sizing: border-box;
+	padding: 10px 30px;
+}
+
+.user {
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: -60px;
+	left: calc(50% - 60px);
+}
+
+h1 {
+	padding-top: 40px;
+	padding-bottom: 10px;
+	text-align: center;
+	font-size: 30px;
+	font-family: Lucida;
+}
+
+.loginbox p {
+	margin: 0;
+	padding: 0;
+	font-weight: bold;
+	font-family: monospace;
+	font-size: 19px;
+}
+
+.loginbox input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"] 
+{
+	border: none;
+	border-bottom: 1px solid ghostwhite;
+	background: transparent;
+	outline: none;
+	height: 35px;
+	color: ghostwhite;
+	font-size: 18px;
+	font-family: Lucida;
+}
+
+input[type="submit"]
+{
+	outline: none;
+	margin-top: 0;
+	margin-bottom :14px;
+	margin-left: calc(50% - 55px);
+	height: 40px;
+	width: 110px;
+	background: #ADEFD1FF;
+	border-radius: 20px;
+	border: 1px solid #000;
+	box-shadow: 2px 2px 6px #000;
+	color: #00203FFF;
+	font-size: 20px;
+	font-family: monospace;
+}
+
+.loginbox input[type="submit"]:hover
+{
+	cursor: pointer;
+	color: #000;
+	font-weight: bold;
+}
+
+.loginbox a {
+	text-decoration: none;
+	font-family: cursive;
+	font-size: 16px;
+	line-height: 20px;
+	color: #ADEFD1FF;
+}
+
+.loginbox a:hover {
+	color:#008080;
+}
+
+.error, .log{
+	font-size: 22px;
+	color: white;
+	position: fixed;
+	z-index: 9;
+	top: 5px;
+	left: 580px;
+    -webkit-animation: cssAnimation 5s forwards; 
+    animation: cssAnimation 5s forwards;
+}
+
+.log {
+	left: 500px;
+}
+
+@keyframes cssAnimation {
+    0%   {opacity: 1;}
+	80%   {opacity: 0.8;}
+	90%  {opacity: 0.3;}
+    100% {opacity: 0;}
+}
+
+@-webkit-keyframes cssAnimation {
+    0%   {opacity: 1;}
+	80%   {opacity: 0.8;}
+	90%  {opacity: 0.3;}
+    100% {opacity: 0;}
+}

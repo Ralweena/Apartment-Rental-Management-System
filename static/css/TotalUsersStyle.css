@@ -1,0 +1,102 @@
+@font-face {
+  font-family: Algerian;
+  font-family: Lucida;
+  src: url(sansation_light.woff);
+}
+
+*{
+	padding: 0;
+	margin: 0; 
+	outline: none;
+	border: none;
+	text-decoration: none;
+	box-sizing: border-box;
+  font-family: cursive;
+}
+
+body {
+  background: #ADEFD1FF;
+  color: #00203FFF;
+}
+
+a {
+  text-decoration: none;
+  color: #ADEFD1FF;
+}
+
+/* navbar styling */
+.navbar {
+  background: transparent;
+  background-size: auto;
+  display: inline;
+}
+
+.navbar .nav-bar {
+  display: inline-block;
+  list-style: none;
+}
+
+.users {
+  padding-left: 35px;
+  font-size: 36px;
+  font-family: 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.search {
+  padding-left: 520px;
+  padding-bottom: 80px;
+}
+
+.search input[type="text"] {
+  background: transparent;
+  height: 25px;
+  width: 250px;
+  color: black;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  border-bottom: 2px solid #00203FFF;
+  margin-right: 25px;
+  font-family: Arial;
+}
+
+/* buttons*/
+
+.nav-bar li {
+  margin-top: 20px;
+  display: inline-block;
+  list-style: outside none none;
+}
+
+.next, .previous {
+  font-size: 30px;
+  color: #00203FFF;
+}
+
+.previous {
+  margin-left: 80px;
+}
+
+.next {
+  margin-left: 50px; 
+}
+
+
+/*------------TABLE------------*/
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 1000px;
+  background-color: #00203FFF;
+  color: #ADEFD1FF;
+  margin: 55px 0 30px 150px;
+}
+
+th,td {
+  border: 1.5px solid ghostwhite;
+  text-align: center;
+  padding: 9px;
+}

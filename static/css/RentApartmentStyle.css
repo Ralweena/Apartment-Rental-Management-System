@@ -1,0 +1,131 @@
+@font-face {
+  font-family: Lucida;
+  src: url(sansation_light.woff);
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	box-sizing: border-box;
+	font-family: cursive;
+}
+
+body {
+	background: #ADEFD1FF;
+}
+
+a {
+	text-decoration: none;
+	color: black;
+}
+
+nav {
+	background: #00203FFF;
+	color: #ADEFD1FF;
+	width: 100%;
+}
+
+section {
+	padding-left: 70px;
+	padding-top: 70px;
+}
+
+p {
+	font-size: 32px;
+	padding:20px 0 20px 52px;
+}
+
+.fa-arrow-left {
+	margin-left: -30px;
+	padding-right: 60px;
+}
+
+.fa-building {
+	padding-right: 15px;
+}
+
+/* styling div container for apartment */
+.container {
+	display: block;
+	width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	height: auto;
+	padding: 30px;
+	border-radius: 20px;
+}
+
+.container #box {
+	border: 2px solid #fff;
+	background-color: #00203FFF;  
+	color: #ADEFD1FF;
+	height: auto;
+	padding: 30px 0;
+	margin-bottom: 100px;
+}
+
+
+.row1 .col1 img {
+	float: left;  
+	width: 240px;
+}
+
+.col1 img, #row2 img {
+	width: 240px;
+	height: 240px; 
+	border-radius: 10px;
+	border: 2px solid #fff;
+	position: relative;
+	left: 40px;
+	top: 30px;
+}
+
+.col2 p{
+	font-size: 18px;
+	margin-bottom: -10px;
+	margin-left: 280px;
+	padding-right: 40px;
+}
+
+.col2 h1  {
+	margin-left: 300px;
+}
+
+#row2 div {
+	display: inline;
+}
+
+#row2 .col3, #row2 .col5, #row2 .col4 {
+	width: 240px;
+	margin-right: 40px;
+}
+
+.col2 #desc {
+	margin-bottom: 40px;
+}
+
+#btnSubmit {
+	height:50px;
+	width: 140px;;
+	color:#00203FFF; 
+	background: #ADEFD1FF;
+	text-align: center;
+	border-radius: 15px;
+	font-size: 16px;
+	margin-top: 60px;
+	margin-left: 340px;
+}
+
+#btnSubmit:hover a {
+	color: #000;
+	font-weight: bold;
+}
+
+.fa-indian-rupee-sign {
+	padding-left: 5px;
+	padding-right: 5px;
+	font-size: 18px;
+}

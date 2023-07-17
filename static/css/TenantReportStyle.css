@@ -1,0 +1,220 @@
+@font-face {
+  font-family: Algerian;
+  font-family: Lucida;
+  src: url(sansation_light.woff);
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	box-sizing: border-box;
+  font-family: cursive;
+}
+
+body {
+  background: #ADEFD1FF;
+  color: #00203FFF;
+}
+
+a {
+  text-decoration: none;
+  color: #ADEFD1FF;
+}
+
+/* navbar styling */
+.navbar {
+  background: transparent;
+  background-size: auto;
+  display: inline;
+}
+
+.navbar .nav-bar {
+  display: inline-block;
+  list-style: none;
+  margin-top: 20px;
+}
+
+.tenant{
+  padding-left: 35px;
+  font-size: 36px;
+  font-family: 'Times New Roman', Times, serif;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.search {
+  padding-left: 460px;
+  padding-bottom: 80px;
+}
+
+.search input[type="text"] {
+  background: transparent;
+  height: 25px;
+  width: 250px;
+  color: black;
+  outline: none;
+  border: none;
+  font-size: 16px;
+  border-bottom: 2px solid #00203FFF;
+  margin-right: 25px;
+}
+
+/* buttons*/
+
+.nav-bar li {
+  display: inline-block;
+  list-style: outside none none;
+}
+
+.operations {
+  width: 140px;
+  height: 60px;
+  background: #00203FFF;
+  border: 1px solid black;
+  color: #ADEFD1FF;
+  border-radius: 10%;
+  margin-left: 990px;
+  text-align: center;
+  font-size: 20px;
+  font-family: Lucida;
+}
+
+.operations:hover a {
+  color: ghostwhite;
+  font-weight: bold;
+}
+
+.operations:hover {
+  color: ghostwhite;
+  font-weight: bold;
+}
+
+.fa-trash {
+  font-size: 20px;
+  padding-left: 8px;
+}
+
+.next, .previous {
+  font-size: 30px;
+  color: #00203FFF;
+}
+
+.next {
+  margin-left: 50px;
+}
+
+.previous {
+  margin-left: 80px;
+}
+
+/* table styling */
+
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 1070px;
+  background-color: #00203FFF;
+  color: #ADEFD1FF;
+  margin: 30px 130px;
+}
+
+th,td {
+  border: 1.5px solid ghostwhite;
+  text-align: center;
+  padding: 9px;
+}
+
+th {
+  margin-top: 0;
+}
+
+/*-------------------------POP UP-------------------------------- */
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 90px;
+  left: calc(50% - 350px);
+  border: 2px solid #fff;
+  z-index: 9;
+  box-shadow: 2px 2px 6px #fff;
+  padding-bottom: 0;
+}
+
+/* Add styles to the form container */
+.form-container {
+  width: 700px;
+  height: 320px;
+  padding: 10px;
+  margin-bottom: 0;
+  background-color: #00203FFF;
+  color: #ADEFD1FF;
+}
+
+.heading {
+  font-size: 28px;
+  text-align: center;
+  font-family: Lucida;
+}
+
+.divider-custom {
+  text-align: center;
+}
+
+.tenant-info {
+  font-family: cursive;
+  font-size: 16px;
+  margin-left: 25px;
+  margin-right: 25px;
+  padding: 0px;
+}
+
+.input-field input[type="number"]
+{
+    border: none;
+    border-bottom: 1px solid ghostwhite;
+    background: transparent;
+    outline: none;
+    height: 24px;
+    color: ghostwhite;
+    font-size: 18px;
+    font-family: Lucida;
+}
+
+#t_id {
+  width: 165px;
+}
+
+.input-field {
+  padding :37px 0 30px 30px;
+}
+
+.input-field .l2 {
+  padding-left: 186px;
+}
+
+
+/* Set a style for the submit/login button */
+
+.form-container .btn, .form-container .cancel {
+  background-color: #ADEFD1FF;
+  color: #000;
+  padding: 16px 20px;
+  border: 1px solid #000;
+  border-radius: 10%;
+  cursor: pointer;
+  width: 95px;
+  height: 48px;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 18px;
+  box-shadow: 2px 2px 4px #000;
+}
+
+.btn {
+  margin:30px 35px 0 240px;
+}

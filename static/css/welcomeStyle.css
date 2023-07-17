@@ -1,0 +1,339 @@
+@font-face {
+  font-family: Algerian;
+  font-family: Lucida;
+  src: url(sansation_light.woff);
+}
+
+body {
+	background: #00203FFF;
+	font-family: cursive;
+	margin: 0;
+	padding: 0;
+}
+
+.navbar {
+	background: #00203FFF;
+	background-size: auto;
+	display: inline;
+	position: fixed;
+	height: 75px;
+	right: 0;
+	left: 0;
+	top: 0;
+}
+
+.container {
+	display: flex;
+}
+
+.Roof {
+	width: 120px;
+	height: 120px;
+	background-size: contain;
+	margin-left: 25px;
+	display: inline-block;
+	border-radius: 50%;
+	position: relative;
+	bottom: -7px;
+}
+
+ul {
+	display: inline-block;
+	list-style: none;
+	margin-left: 600px;
+	margin-top: 20px;
+}
+
+li {
+	display: inline-block;
+	margin-right: 30px;
+}
+
+i {
+	padding-left: 10px;
+}
+
+.menu1, .menu{
+	color: #ADEFD1FF;
+	font-size: 20px;
+}
+
+.menu:hover, .menu1:hover {
+	cursor: pointer;
+}
+
+.hidemenu{
+	color: #ADEFD1FF;
+	font-size: 20px;
+	margin-top: -5px;
+	font-size: 20px;
+	list-style: none !important;
+	padding-bottom: 7px;
+	border-bottom: 2px solid #ADEFD1FF;
+	transition: 0.2s;
+}
+
+a {
+	text-decoration: none;
+	color: #ADEFD1FF;
+	font-size: 20px;
+	cursor: pointer;
+}
+
+.signin {
+	color: #ADEFD1FF;
+	font-size: 20px;
+}
+
+.dropdown {
+ 	position: relative;
+ 	display: inline-block;
+}
+
+.dropdown-content {
+	padding: 5px;
+ 	display: none;
+ 	position: absolute;
+ 	background-color: #00203FFF;
+ 	left: -25px;
+ 	min-width: 157px;
+ 	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+ 	z-index: 1;
+ 	text-align: center;
+ 	border-radius: 10%;
+}
+
+.dropdown-content a {
+ 	color: #ADEFD1FF;
+ 	padding: 10px 10px;
+ 	text-decoration: none;
+ 	display: block;
+	text-align: center;
+}
+
+.dropdown-content a:hover {
+	border-bottom: 2px solid #ADEFD1FF;
+	margin-bottom: -2px;
+}
+
+.dropdown:hover .dropdown-content {
+	display: block;
+}
+
+.bg {
+	width: 100%;
+	height: 100vh;
+	position: fixed;
+	background-image: url('/static/images/background.jpg');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	text-align: center;
+	color: ghostwhite;
+}
+
+.quote {
+	margin-top: 395px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-size: 20px;
+	font-family: Lucida;
+  font-weight: bold;
+}
+
+.heading1 {
+	font-size: 48px;
+	margin-top: 0;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	font-family: Algerian;
+}
+
+.highlight {
+	font-size: 60px;
+}
+
+.sub {
+	padding-left: 20px;
+	font-size: 24px;
+	margin-top: -5px;
+	padding-top: 0;
+	font-family: Lucida;
+  font-weight: bold;
+}
+
+/* --------------------------- POP UP FOR ABOUT US ------------------------------*/
+
+/* Styling of POP UP Window for both about and contact us */
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  top: 90px;
+  left: calc(50% - 450px);
+  border: 2px solid #fff;
+  box-shadow: 2px 2px 1px black;
+  z-index: 9;
+  box-shadow: 2px 2px 6px #fff;
+}
+
+/* Add styles to the form container */
+.form-container {
+  width: 900px;
+  height: 420px;
+  padding: 10px;
+  background-color: #00203FFF;
+  color: #ADEFD1FF;
+}
+
+.heading2{
+	font-size: 30px;
+	font-family: Lucida;
+	text-align: center;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.vision, .mission {
+	font-family: cursive;
+	font-size: 20px;
+	text-align: center;
+	padding-bottom: 0;
+	margin-bottom: 0;
+	padding-top: 15px;
+	margin-top: 0;
+}
+
+.fa-star {
+	padding-right: 10px;
+}
+
+.about-us {
+	font-family: cursive;
+	font-size: 16px;
+	margin-left: 25px;
+	margin-right: 25px;
+	padding: 0px;
+}
+
+.form-container .cancel-btn {
+  background-color: #ADEFD1FF;
+  color: #000;
+  padding: 16px 20px;
+  border: 1px solid #000;
+  border-radius: 15%;
+  cursor: pointer;
+  width: 95px;
+  height: 48px;
+  text-align: center;
+  margin-top: 15px;
+  margin-left: 400px;
+  font-size: 18px;
+  box-shadow: 2px 2px 4px #000;
+}
+
+
+/* ------------------------- POP UP FOR CONTACT US ----------------------------*/
+
+.heading3 {
+	font-size: 30px;
+	font-family: Lucida;
+  text-align: center;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-top: 5px;
+}
+
+.divider-custom {
+	text-align: center;
+}
+
+.form1 {
+	padding-top: 20px;
+}
+
+label {
+	font-family: cursive;
+	font-size: 16px;
+	margin-left: 10%;
+}
+
+.form2 {
+	display: inline;
+	padding: 0;
+	margin: 0;
+}
+
+#msg {
+	top: 0;
+}
+
+/* Full-width input fields */
+input[type="text"], input[type="email"]{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+  width: 200px;
+	height: 30px;
+	margin-left: 10px;
+	margin-bottom: 15px;
+	padding-left: 0;
+  font-size: 18px;
+  font-family: Lucida;
+  color: ghostwhite;
+}
+
+input[type="text"] {
+	margin-top: 10px;
+}
+
+textarea[type="text"]  {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	margin-top: 20px;
+	height: 100px;
+	width: 500px;
+  font-size: 18px;
+  font-family: Lucida;
+  color: ghostwhite;
+}
+
+.msg {
+	position: relative;
+	top: -90px;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn, .form-container .cancel {
+  background-color: #ADEFD1FF;
+  color: #000;
+  padding: 16px 20px;
+  border: 1px solid #000;
+  border-radius: 10%;
+  cursor: pointer;
+  width: 95px;
+  height: 48px;
+  text-align: center;
+  margin-top: 25px;
+  font-size: 18px;
+  box-shadow: 2px 2px 4px #000;
+}
+
+#submitButton {
+  margin-right:30px;
+  margin-left: 320px;
+}
+
+input[type="number"]{
+	border: none;
+	background: transparent;
+	width: 70px;
+	border-bottom: 1px solid ghostwhite;
+	color: ghostwhite;
+	outline: none;
+}

@@ -1,0 +1,93 @@
+@font-face {
+    font-family: Lucida;
+    src: url(sansation_light.woff);
+  }
+  
+  body {
+      padding: 0;
+      margin: 0;
+      background: #00203FFF;
+  }
+  
+  .box {
+      position: absolute;
+      background-position: center center;
+      width: 100%;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+  }
+  
+  .navbar {
+    position: fixed;
+    padding-top: 23px; 
+    background-color: transparent;
+  }
+  
+  .lead {
+      font-size: 24px;
+      font-family: Lucida;
+      color: #ADEFD1FF;
+      margin-left: 35px;
+      text-decoration: none;
+  }
+  
+  i {
+      padding-right: 5px;
+  }
+  
+  .receiptbox {
+      width: 620px;
+      height: 460px;
+      background: #ADEFD1FF;
+      border-radius: 5%;
+      border: 1px solid #000;
+      box-shadow: 2px 2px 8px #000;
+      color: #000;
+      position: absolute;
+      top: calc(50% - 230px);
+      left: calc(50% - 310px);
+      box-sizing: border-box;
+      padding: 70px 30px;
+  }
+  
+  .payment {
+      border-radius: 50%;
+      width: 180px;
+      height: 180px;
+      position: absolute;
+      top: 30px;
+      left: calc(50% - 90px);
+  }
+  
+  h1 {
+      margin: 0;
+      padding-top: 180px;
+      padding-bottom: 50px;
+      text-align: center;
+      font-size: 34px;
+      font-family: Lucida;
+      color: black;
+  }
+  
+  .receiptbox p {
+      margin: 0;
+      padding: 0;
+      padding-left: 80px;
+      font-weight: bold;
+      color: #000;
+      font-family: monospace;
+      font-size: 20px;
+  }
+
+  .receiptbox a {
+      text-decoration: none;
+      font-family: cursive;
+      font-size: 16px;
+      line-height: 20px;
+      color: #000;
+  }
+  
+  .receiptbox a:hover {
+      color: #008080 ;
+  }

@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Sofia");
+
+.sideNavbar {
+	position: fixed;
+	top: 0;
+	left: -270px;
+	bottom: 0;
+	height: 100vh;
+	width: 325px;
+	background-color: #00203FFF;;
+	overflow: hidden;
+	color: #ADEFD1FF;
+	transition: 1s;
+    margin: 0;
+    padding: 0;
+}
+
+.sideNavbar:hover {
+	top: 0;
+	left: 0;
+	width: 325px; 
+}
+
+.sideNavbar:hover .fa-bars {
+	color: #00203FFF; 
+}
+
+.menu .logo{
+	text-align: center;
+	display: flex;
+	margin-top: 35px;
+	margin-bottom: 100px;
+	margin-left: -15px;
+}
+
+.sideNavbar .logout {
+	display: flex;
+	margin-top: 80px;
+	margin-left: 30px;
+}
+.sideNavbar .logout:hover {
+	color: ghostwhite;
+}
+
+.sideNavbar .logout:hover span {
+	color: ghostwhite;
+}
+
+.sideNavbar li{
+	list-style: none !important;
+	margin-bottom: 29px;
+	margin-left: 35px;
+}
+
+#usr {
+	margin-right: 90px;
+  }
+  
+
+.menu .logo span {
+	font-weight: bold;
+	padding-left: 6px;
+	font-size: 20px;
+	text-transform: uppercase;
+}
+
+.menu :hover{
+	color:ghostwhite;
+}
+
+a {
+	text-decoration: none !important;
+	color: #ADEFD1FF;
+}
+
+
+.nav-item {
+	position: relative;
+	color: #ADEFD1FF;
+	font-size: 16px;
+	text-transform: uppercase;
+	padding-left: 10px;
+}
+
+.hidemenu {
+	list-style: none !important;
+	border-bottom:2px solid ghostwhite;
+	padding-bottom: 10px;
+	margin-top: -5px;
+	transition: 0.2s;
+	width: fit-content;
+}
+
+.hidemenu a, .hidemenu span{
+	color: ghostwhite;
+}
+
