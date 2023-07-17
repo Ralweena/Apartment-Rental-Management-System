@@ -6,7 +6,17 @@ Apartment Rental Management System is based on searching the apartments for rent
 * Back End - Python Flask
 * Database - MySql
 ## Requirements
-The source code of this project is written in Python. So, You'll require :
-* to install libraries and dependencies listed in requirements.txt
-* WAMP/XAMPP/MAMP
-to run this project.
+The source code of this project is written in Python. So, You'll require the following to run this project
+[pip install -r requirements.txt](pip install -r requirements.txt)
+* Install libraries and dependencies listed in **requirements.txt**
+* Install **MYSQL Workbench**
+* Install **XAMPP** server
+## How to Run the Project
+1. Fork the repo and open the folder in your VSCode.
+2. Copy all the sql commands listed in the **database** folder and run in on **MYSQL Workbench**.
+3. Start the following two processes in **XAMPP** once it has been installed and loaded:
+   * **Apache Webserver** - to serve HTTP requests.
+   * **MySQL Server** - the database server.
+4. Navigate to main.py file and run the file in VSCode.
+5. Click on the link generated to run the project.
+
