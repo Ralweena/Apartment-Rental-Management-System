@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Login Page</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/AdminLoginStyle.css')}}">
+		<script>
+			$(function () {
+				$("#txtName").keypress(function (e) {
+					var keyCode = e.keyCode || e.which;
+	 
+					$("#lblError").html("");
+	 
+					//Regex for Valid Characters i.e. Alphabets and Numbers.
+					var regex = /^[A-Za-z -']+$/;
+	 
+					//Validate TextBox value against the Regex.
+					var isValid = regex.test(String.fromCharCode(keyCode));
+					if (!isValid) {
+						$("#lblError").html("Only Alphabets and allowed.");
+					}
+	 
+					return isValid;
+				});
+			});
+		</script>
+	</head>
+	<body>
+		{% if error %}  
+        	<p id="lblError" class="error"><strong>Error</strong>: {{error}}</p>  
+    	{% endif %} 
+		{% if log2 %}  
+        	<p class="log">{{log2}}</p>  
+    	{% endif %}  
+		<div class="box">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="/" class="lead"><i class="fa fa-arrow-left"></i> BACK</a>
+                </div>
+            </nav>
+
+    		<div class="loginbox">
+    			<img src="{{url_for('static',filename='images/admin_icon.jpg')}}" class="user">
+    			<h1>Admin Sign In</h1>
+    			<form action="{{ url_for('AdminLogin') }}" method="post">
+    				<p>Username : </p>
+    				<input type="text" id="txtName" name="adminUsername" placeholder="Enter Username" required/>
+    				<p>Password : </p>
+    				<input type="password" name="adminPass" placeholder="Enter Password" required/>
+                    <p>Security Password : </p>
+                    <input type="password" name="securityPass" placeholder="Enter Security Password" required/>
+    				<input type="submit" value="Sign In"><br>
+    			</form>
+    		</div>
+    	</div>
+
+	</body>
+</html>

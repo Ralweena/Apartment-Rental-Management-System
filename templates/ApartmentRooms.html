@@ -1,0 +1,186 @@
+{% extends 'base.html' %}
+{% block title %}Apartment Rooms{% endblock%}
+{% block script %}
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/ApartmentRoomsStyle.css')}}">
+{% endblock %}
+{% block content %}
+    	<header>
+			<nav class="navbar">
+				<ul class="nav-bar">
+                    <li class="arrow"><a href="/tenantReport" class="previous"><i class="fa-solid fa-arrow-left"></i></a></li>
+					<li class="rooms"><p><i class="fa-solid fa-building"></i> Apartment Rooms</p></li>
+					<li class="search"><input type="number" placeholder="Search apartment no. here...." class="live-search-box"><i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i></li>
+                    <li class="arrow"><a href="/RentStatus" class="next"><i class="fa-solid fa-arrow-right"></i></a></li>
+                </ul>
+			</nav>
+		</header> 
+		<section>
+            <ul class="crud">
+            	<li><button class="operations" type="submit" onclick="openAddForm()"><a href="#AddApartment">ADD<i class="fa-solid fa-plus"></i></a></button></li>
+            	<div class="add-form-popup" id="addForm">
+                    <form class="add-form-container" action="{{ url_for('ApartmentRooms') }}" method="post" enctype="multipart/form-data">
+                        <!-- Add Section Heading-->
+                        <p class="heading">ADD  APARTMENT<p>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom">---------------
+                            <i class="fa-solid fa-star"></i>---------------
+                        </div>
+                        <!-- Add Section Form-->
+                        <div class="row">
+                            <div class="col">
+                                <div class="apartment-info">
+                                	<div class="input-field">
+                                        <label class="l1">Room No : </label>
+                                        <input class="lf1" id="room-no" type="number" placeholder=" Eg: 312" name="room" required/>
+                                        <label class="l2">Status : </label>
+                                        <input class="lf2" id="status" type="text" placeholder="Occupied/Unoccupied" name="status" required/>
+                                    </div>
+									<div class="input-field">
+                                        <label class="l1">Block No : </label>
+                                        <input class="lf1" id="block-no" type="number" placeholder=" Eg: 3" name="block" required/>
+                                        <label class="l2">Rent : </label>
+                                        <input class="lf2" id="rent_per_month" type="text" placeholder="Enter rent per month" name="rentPerMonth" required/>
+                                    </div>
+                                    <div class="input-field">
+                                        <p style="padding:0 30px;">
+                                            <label for="area">Area : </label>
+                                            <input type="number" placeholder=" Eg: 2500" name="area" id="area" required/> sqft
+                                        </p>
+                                    </div>
+                                    <div class="input-field">
+                                        <p>Choose Photos to be displayed :</p>
+                                        <p>
+                                            <label for="hall">Hall : </label><input type="file" accept="image/*" value="Choose Photo" name="hall" id="hall"  required/> 
+                                        </p>
+                                        <p>
+                                            <label for="kitchen">Kitchen : </label><input type="file" accept="image/*" value="Choose Photo" name="kitchen" id="kitchen" required/> 
+                                        </p>
+                                        <p>
+                                            <label for="bedroom">Bedroom : </label><input type="file" accept="image/*" value="Choose Photo" name="bedroom" id="bedroom" required/> 
+                                        </p>
+                                        <p>
+                                            <label for="extra">Extra : </label><input type="file" accept="image/*" value="Choose Photo" name="extra" id="extra" >
+                                        </p>
+                                        <p>
+                                            <label for="apartmentTitle">Title : </label>
+                                            <input type="text" id="apartmentTitle" name="apartmentTitle" placeholder="Enter a title" required/>
+                                        </p>
+                                        <p class="Desc">
+                                            <label for="desc">Description:</label><br><br>
+                                            <textarea id="desc" name="desc" rows="5" cols="52" placeholder="Enter description of the apartment" required/></textarea>
+                                        </p>
+                                    </div>
+                                    <input type="submit" class="btn" value="Add"/>
+                                    <button type="button" class="cancel" onclick="closeAddForm()">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            	<li><button class="operations" type="submit" onclick="openUpdateForm()"><a href="#updateApartment">UPDATE <i class="fa-solid fa-pen-to-square"></i></a></button></li>
+				<div class="form-popup" id="updateForm">
+                    <form class="form-container" action="{{ url_for('UpdateApartment') }}" method="post">
+                        <!-- Add Section Heading-->
+                        <p class="heading" style="padding-top:30px">UPDATE  APARTMENT<p>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom">---------------
+                            <i class="fa-solid fa-star"></i>---------------
+                        </div>
+                        <!-- Add Section Form-->
+                        <div class="row">
+                            <div class="col">
+                                <div class="apartment-info">
+                                	<div class="input-field">
+                                        <label class="l1">Room No : </label>
+                                        <input class="lf1" type="number" placeholder=" Eg: 312" name="room1" required/>
+                                        <label class="l2">Status : </label>
+                                        <input class="lf2" type="text" placeholder="Occupied/Unoccupied" name="status1"  required/>
+                                    </div>
+									<div class="input-field">
+                                        <label for="up_area" style="padding-left:30px">Area : </label>
+                                        <input id="up_area" type="number" placeholder="Enter the Amount" name="up_area"  required/> Sqft.
+                                        <label class="l2" style="padding-left:55px">Rent : </label>
+                                        <input class="lf2" type="text" placeholder="Enter the Amount" name="rentPerMonth1"  required/>
+                                    </div>
+                                    <div class="input-field">
+                                        <label for="up_tite" style="padding-left:30px">Title : </label>
+                                        <input type="text" placeholder="Enter the Title" name="up_title" id="up_title"  required/>
+                                    </div>
+                                    <input type="submit" class="btn" value="Update" />
+                                    <button type="button" class="cancel" onclick="closeUpdateForm()">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            	<li><button class="operations" type="submit" onclick="openDeleteForm()">
+                    <a href="#DeleteApartment">DELETE<i class="fa-solid fa-trash"></i></a>
+                </button></li>
+				<div class="form-popup" id="deleteForm">
+                    <form class="form-container" action="{{ url_for('DeleteApartment') }}" method="post">
+                        <!-- Add Section Heading-->
+                        <p class="heading" style="padding-top:50px">DELETE  APARTMENT<p>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom">---------------
+                            <i class="fa-solid fa-star"></i>---------------
+                        </div>
+                        <!-- Add Section Form-->
+                        <div class="row">
+                            <div class="col">
+                                <div class="apartment-info">
+                                	<div class="input-field">
+                                        <label class="l1">Room No : </label>
+                                        <input class="lf1" type="number" placeholder=" Eg: 312" name="room2" required/>
+                                    </div>
+                                    <input type="submit" class="btn" value="Delete" />
+                                    <button type="button" class="cancel" onclick="closeDeleteForm()">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </ul>
+            <div >
+                <table id="box">
+				    {% for msg3Row in msg3 %}  
+				        <tr class="live-search-list">
+                            <td id="image">
+                                {% for i in img_url %} 
+                                    {% if i['ROOM_NO'] == msg3Row['ROOM_NO'] %}   
+                                        {% set value = i['PATHNAME']+'/'+i['PHOTO1'] %}
+                                        <img id="hallImage" src="{{url_for('static', filename=value) }}" alt="Hall"/>
+                                    {% endif %}
+                                {% endfor %}
+                            </td>
+						    <td id="decription"> 
+                                {% if msg3Row['APT_TITLE'] %}
+                                    <p class="details" style="font-size:24px">{{ msg3Row['APT_TITLE'] }}</p>
+                                {% endif %}
+                                <p class="details" style="display:inline"> 
+                                    {% if msg3Row['ROOM_NO'] %}
+                                        Apartment : <span style="padding-right:20px"> {{ msg3Row['ROOM_NO'] }}</span>
+                                    {% endif %}
+                                    {% if msg3Row['AREA'] %}
+                                        Area : <span style="padding-right:20px"> {{ msg3Row['AREA'] }} Sqft.</span>
+                                    {% endif %}
+                                    {% if msg3Row['RENT_PER_MONTH'] %}
+                                        Rent : <span><i class="fa-solid fa-indian-rupee-sign"></i> {{ msg3Row['RENT_PER_MONTH'] }}</span>
+                                    {% endif %}
+                                </p>
+                                {% if msg3Row['APARTMENT_DESC'] %}  
+        	                        <p class="details" id="apartmentDetails">{{ msg3Row['APARTMENT_DESC'] | replace('. ', '.<br>') | safe }}</p>
+    	                        {% endif %} 
+                            </td>
+				        </tr> 
+			        {% endfor %}
+			    </table>
+            </div>
+		</section>
+{% endblock %}
+
+{% block endscript %}
+    <script type="text/javascript" src="{{url_for('static',filename='js/search.js')}}"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='js/Scripts.js')}}"></script>
+{% endblock %}

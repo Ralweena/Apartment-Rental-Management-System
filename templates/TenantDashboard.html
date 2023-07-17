@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tenant Dashboard</title>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/TenantDashStyle.css')}}">
+	</head>
+	<body>
+		{% with messages = get_flashed_messages() %}
+  			{% if messages %}
+   		 		{% for message in messages %}
+					<p class="msg">{{message}}</p>
+    			{% endfor %}
+  			{% endif %}
+		{% endwith %}
+		<div class="container">
+			<img class="logo" src="{{url_for('static',filename='images/rooftop1.jpg')}}">
+			<p>Welcome To RoofTop Apartments</p>
+			<p class="p2">--------------------<i class="fa-solid fa-star"></i>--------------------</p>
+			<a href="/Logout" class="logout">Logout<i class="fa-solid fa-sign-out-alt" style="font-size:24px;padding-left: 8px;"></i></a>
+			<div class="col1">
+				<img src="{{url_for('static',filename='images/Apartment.jpg')}}" alt="Apartment Image">
+				<button class="btn1" formaction="#"><a href="/RentApartment">Rent Apartment</a></button>
+			</div>
+			<div class="col2">
+				<img src="{{url_for('static',filename='images/PayRent.jpg')}}" alt="Payment Image">
+				<button class="btn2"><a href="/alreadyTenant">Pay Rent</a></button>
+			</div>
+		</div>
+	</body>
+</html>

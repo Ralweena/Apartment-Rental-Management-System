@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>Welcome Page</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/welcomeStyle.css')}}">
+    </head>
+    <body>
+        <div class="bg">
+            <p class="quote">Turn the key, walk through the door. This new <strong>HOUSE</strong> is all, you ever wanted and more...</p>
+            <p class="heading1">Welcome To <span class="highlight">RoofTop</span> Apartments</p>
+            <p class="sub">Quality Lifestyle</p>
+        </div>
+    	<header id="home">
+    		<nav class="navbar">
+    			<div class="container">
+    				<img src="{{url_for('static',filename='images/rooftop1.jpg')}}" class="Roof">
+                    <ul id="checklist">
+                        <li class="menu"><a href="#home">Home</a></li>
+                        <li class="menu1" onclick="openAboutForm()">About Us</li>
+                        <div class="form-popup" id="aboutForm">
+                            <form class="form-container">
+                                <!-- Contact Section Heading-->
+                                <p class="heading2">ABOUT US<p>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">---------------
+                                    <i class="fa fa-star" aria-hidden="true"></i>---------------
+                                </div>
+                                <!-- Contact Section Form-->
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="about-us">
+                                            <h4 class="vision">------Our Vision------</h4><br>To develop an Online Apartment Rental Management System that allows user to rent an apartment without physically contacting the Rental company.<br>
+                                            <h4 class="mission">------Our Mission------</h4><br>To produce a web-based system that allow customer to register and reserve apartments online and for the company to effectively manage their apartment rental business. To study and analyse the requirement specifications of Online Apartment Rental Management system and to validate the apartment rental system using user feedback and testimonies. To Transform the manual process of renting an apartment to an online and computerized system and to ease customer’s task whenever they need to rent an apartment. 
+                                        </div>
+                                        <button type="button" class="cancel-btn" onclick="closeAboutForm()">Close</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <li class="menu1" onclick="openContactForm()">Contact Us</li>
+                        <div class="form-popup" id="contactForm">
+                            <form class="form-container">
+                                <!-- About Section Heading-->
+                                <p class="heading3">Give us your Valuable Feedback<p>
+                                <!-- Icon Divider-->
+                                <div class="divider-custom">---------------
+                                    <i class="fa fa-star" aria-hidden="true"></i>---------------
+                                </div>
+                                <!-- About Section Form-->
+                                <div class="row">
+                                    <div class="col">
+                                        <form id="contactForm">
+                                        <!-- Name and phone number input-->
+                                            <div class="form1">
+                                                <label for="name">Full name :</label>
+                                                <input type="text" placeholder="Enter your name..." required/>
+                                                <label for="phone">Phone number :</label>
+                                                <input type="text" placeholder="(91) 1234567890" required min="10"/>
+                                            </div>
+                                            <!-- Email address input-->
+                                            <div class="form2">
+                                                <label for="email">Email address :</label>
+                                                <input type="email" placeholder="name@example.com" required/>
+                                                <label for="apt_no">Apartment No :</label>
+                                                <input type="number" placeholder="312" required maxlength="4" />
+                                            </div>
+                                            <!-- Message input-->
+                                            <div class="form3">
+                                                <label class="msg">Message :</label>
+                                                <textarea type="text" placeholder="Enter your message here..." required/></textarea>
+                                            </div>
+                                            <!-- Submit Button-->
+                                            <button class="btn" id="submitButton" type="submit">Send</button>
+                                            <button type="button" class="btn cancel" onclick="closeContactForm()">Close</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <li class="menu">
+                            <div class="dropdown">
+                                <span class="signin">Sign In<i class="fa fa-user-circle-o fa-lg"></i></span>
+                                <div class="dropdown-content">
+                                    <a href="\AdminLogin">Admin</a>
+                                    <a href="\TenantLogin">Tenant</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+    		</nav>
+    	</header>
+
+        <script type="text/javascript" src="{{url_for('static',filename='js/welcomeScripts.js')}}"></script>
+
+    </body>
+</html>

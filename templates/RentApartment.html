@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Apartment</title>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/RentApartmentStyle.css')}}">
+	</head>
+	<body>
+		<header>
+			<nav>
+				<p><a href="/TenantDashboard"><i class="fa-solid fa-arrow-left" style="color: #ADEFD1FF;"></i></a><i class="fa-solid fa-building"></i>APARTMENTS</p>
+			</nav>
+		</header>
+		<section>
+			<div class="container">
+			{% for aptRow in apartment %}
+				<div>
+					<div id="box">
+						<div class="row1">
+							<div class="col1">
+								{% for i in img_url %} 
+									{% if i['ROOM_NO'] == aptRow['ROOM_NO'] %}  
+										{% set hallImage = i['PATHNAME']+'/'+i['PHOTO1'] %}
+										<img src="{{url_for('static',filename=hallImage)}}" alt="Hall">
+									{% endif %}
+								{% endfor %}
+							</div>
+							<div class="col2">
+								{% if aptRow['APT_TITLE'] %}
+									<h1>{{ aptRow['APT_TITLE'] }}</h1>
+								{% endif %}
+								<p>
+									{% if aptRow['ROOM_NO'] %}
+										<span style="padding-right: 20px;">Apartment No : <span id="apt_id">{{ aptRow['ROOM_NO']  }}</span></span>
+									{% endif %}
+									{% if aptRow['RENT_PER_MONTH'] %}
+										<span style="padding-right: 20px;">Rent :<i class="fa-solid fa-indian-rupee-sign"></i>{{ aptRow['RENT_PER_MONTH'] }}</span>
+									{% endif %}
+									{% if aptRow['AREA'] %}
+										<span>Area : {{ aptRow['AREA'] }} Sq.ft.</span>
+									{% endif %}
+								</p>
+								{% if aptRow['APARTMENT_DESC'] %}  
+									<p id="desc">{{ aptRow['APARTMENT_DESC'] | replace('. ', '.<br>') | safe }}</p>
+								{% endif %} 
+						</div>
+						<div id="row2">
+							{% for i in img_url %} 
+								{% if i['ROOM_NO'] == aptRow['ROOM_NO'] %}  
+									{% set kitchenImage = i['PATHNAME']+'/'+i['PHOTO2'] %}
+									{% set bedroomImage = i['PATHNAME']+'/'+i['PHOTO3'] %}
+									{% set extraImage = i['PATHNAME']+'/'+i['PHOTO4'] %}
+									<div class="col3">
+										<img src="{{url_for('static',filename=bedroomImage)}}" alt="Bedroom">
+									</div>
+									<div class="col4">
+										<img src="{{url_for('static',filename=kitchenImage)}}" alt="Kitchen">
+									</div>
+									<div class="col5">
+										<img src="{{url_for('static',filename=extraImage)}}" alt="Dinning">
+									</div>
+								{% endif %}
+							{% endfor %}
+						</div>
+						<div class="row3">
+							<p><button type="submit" id="btnSubmit"><a href="/Details">BOOK NOW</a></button></p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+			</div>
+    	</section>
+	</body>
+</html>

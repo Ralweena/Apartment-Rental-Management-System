@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Tenants Report{% endblock%}
+{% block script %}
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/TenantReportStyle.css')}}">
+{% endblock %}
+{% block content %} 
+			<nav class="navbar"> 
+				<ul class="nav-bar">
+					<li class="arrow"><a href="/TotalUsers" class="previous"><i class="fa-solid fa-arrow-left"></i></a></li>	
+					<li class="tenant"><p><i class="fa-solid fa-users"></i> Tenants</p></li>
+					<li class="search"><input type="text" placeholder="  Search here...." class="live-search-box" /><i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i></li>
+					<li class="arrow"><a href="/ApartmentRooms" class="next"><i class="fa-solid fa-arrow-right"></i></a></li>
+				</ul>
+			</nav>
+		</header>
+		<section> 
+			<ul class="crud"><li><button class="operations" onclick="openDeleteForm()"><a href="#DeleteTenant">DELETE <i class="fa-solid fa-trash"></i></a></button></li>
+				<div class="form-popup" id="deleteForm">
+                    <form class="form-container" action="{{ url_for('tenantReport') }}" method="post">
+                        <!-- Delete Section Heading-->
+                        <p class="heading">DELETE  TENANT<p>
+                        <!-- Icon Divider-->
+                        <div class="divider-custom">---------------
+                            <i class="fa-solid fa-star"></i>---------------
+                        </div>
+                        <!-- Delete Section Form-->
+                        <div class="row">
+                            <div class="col">
+                                <div class="tenant-info">
+                                	<div class="input-field">
+                                        <label class="l2">Tenant Id : </label>
+                                        <input class="if1" id="t_id" type="number" name="tid" placeholder=" Enter tenant Id" required/>
+                                    </div>
+								</div>
+                                <input type="submit" class="btn" value="Delete" /> 
+                                <button type="button" class="cancel" onclick="closeDeleteForm()">Close</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+			</ul>
+			<table>
+  				<tr>
+					<th>Tenant Id</th>
+    				<th>First Name</th>
+					<th>Last Name</th>
+    				<th>Gender</th>
+    				<th>Phone No.</th>
+    				<th>Email</th>
+    				<th>Room No.</th>
+  				</tr>
+  				{% for row in tenantReport %}  
+					<tr  class="live-search-list">
+						{% for col in row %}
+							<td>{{row[col]}}</td>
+						{% endfor %}
+					</tr> 
+				{% endfor %}
+			</table>
+		</section>
+{% endblock %}
+
+{% block endscript %}
+	<script type="text/javascript" src="{{url_for('static',filename='js/Scripts.js')}}"></script>
+	<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="{{url_for('static',filename='js/search.js')}}"></script>
+{% endblock %}

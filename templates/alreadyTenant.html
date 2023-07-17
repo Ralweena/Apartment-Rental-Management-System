@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Tenant Details</title>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/detailsStyle.css')}}">
+	</head>
+	<body>
+        <div class="box">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="#" class="lead" onclick="history.back()"><i class="fa fa-arrow-left" style="font-size: 22px;"></i> BACK</a>
+                </div>
+            </nav>
+
+			{% if Error %}  
+        		<p class="error" style="top: 45px;"><strong>Error</strong>: {{Error}}</p>  
+    		{% endif %} 
+    		<div class="formbox" style="height:310px; width:580px; left:calc(50% - 290px); top:calc(50% - 155px)">
+    			<h1>Please Fill Out The Details</h1>
+    			<form action="{{ url_for('alreadyTenant') }}" method="post">
+    				<p>Username : 
+    				<input type="email" name="Username" placeholder="Enter your email" required/></p>
+    				<p>Apartment No. : 
+    				<input type="number" name="aptNo" placeholder="  Eg : 152" required min=3/></p>
+    				<input type="submit" value="Submit"><br>
+    			</form>
+    		</div>
+    	</div>
+
+    </body>
+</html>

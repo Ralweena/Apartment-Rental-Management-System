@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+{% block title %}Tenants Report{% endblock%}
+{% block script %}
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/TenantReportStyle.css')}}">
+{% endblock %}
+{% block content %} 
+		<header>
+			<nav class="navbar">
+				<ul class="nav-bar">
+					<li><a href="\ApartmentRooms" class="previous"><i class="fa-solid fa-arrow-left"></i></a></li>	
+					<li class="tenant"><p><i class="fa-solid fa-coins"></i> RENT STATUS</p></li>
+					<li class="search" style='padding-left: 385px'><input type="text" placeholder="  Search apartment no. here...." class="live-search-box"><i class="fa-solid fa-magnifying-glass" style="font-size: 20px;"></i></li>
+					<li><a href="/Backup" class="next"><i class="fa-solid fa-arrow-right"></i></a></li>
+				</ul>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<ul class="crud">
+				<li><button class="operations" type="submit"><a href="/UpdatedRentStatus">UPDATE <i class="fa-solid fa-pen-to-square"></i></a></button></li>
+			<table>
+  				<tr>
+    				<th>First Name</th>
+					<th>Last Name</th>
+    				<th>Apt No.</th>
+    				<th>Rent</th>
+    				<th>Due date</th>
+    				<th>Status</th>
+					<th>Late Fee</th>
+  				</tr>
+  				{% for row in rent_status %}  
+					<tr class="live-search-list">
+						{% for col in row %}
+							<td>{{row[col]}}</td>
+						{% endfor %}
+					</tr> 
+				{% endfor %}
+			</table>
+		</section>
+{% endblock %}
+
+{% block endscript %}
+	<script type="text/javascript" src="{{url_for('static',filename='js/search.js')}}"></script>
+{% endblock %}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Registration Page</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/RegisterStyle.css')}}">
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+                $("#txtName").keypress(function (e) {
+                    var keyCode = e.keyCode || e.which;
+         
+                    $("#lblError").html("");
+         
+                    //Regex for Valid Characters i.e. Alphabets and Numbers.
+                    var regex = /^[A-Za-z -']+$/;
+         
+                    //Validate TextBox value against the Regex.
+                    var isValid = regex.test(String.fromCharCode(keyCode));
+                    if (!isValid) {
+                        $("#lblError").html("Only Alphabets and allowed.");
+                    }
+         
+                    return isValid;
+                });
+            });
+            $(function () {
+                $("#LName").keypress(function (e) {
+                    var keyCode = e.keyCode || e.which;
+         
+                    $("#lblError").html("");
+         
+                    //Regex for Valid Characters i.e. Alphabets and Numbers.
+                    var regex = /^[A-Za-z -']+$/;
+         
+                    //Validate TextBox value against the Regex.
+                    var isValid = regex.test(String.fromCharCode(keyCode));
+                    if (!isValid) {
+                        $("#lblError").html("Only Alphabets and allowed.");
+                    }
+         
+                    return isValid;
+                });
+            });
+        </script>
+	</head>
+	<body>
+	
+    	    <div class="container">
+                <nav class="navbar">
+                	<div class="container">
+                    	<a href="/TenantLogin" class="lead"><i class="fa fa-arrow-left"></i> BACK</a>
+                	</div>
+            	</nav>
+
+                {% if msg1 %}  
+        	        <p id="error" class="msg1"><strong>{{ msg1 }}</strong></p>  
+                    <span id="lblError" style="color: red"></span>
+    	        {% endif %} 
+                <div class="box">
+                    <div class="row">
+
+                        <div class="column1">
+                           <img src="{{url_for('static',filename='images/TenantReg_img.jpg')}}" class="image">
+                        </div>
+                        
+                         <div class="column2">
+                            <div class="details">
+                                <h1>Registration Form</h1>
+                                <form action="{{ url_for('Register') }}" method="post">
+                                    <div class="details personal">
+                                        <h2>Personal Details</h2>
+                                        <div class="fields">
+                                            <div class="input-field">
+                                                <label>First Name : </label>
+                                                <input id="txtName" class="l1" type="text" placeholder="Enter your first name" name="firstname" required/>
+                                                <label class="lb2">Last Name : </label>
+                                                <input id="LName" class="l2" type="text" placeholder=" Enter your last name" name="lastname" required/>
+                                            </div>
+                                            <div class="input-field">
+                                                <label>Mobile Number : </label>
+                                                <input class="l3" type="number" id="PhoneNo" placeholder=" Eg: 9868743210" name="phNo" title="Must be 10 digits" required />
+                                                <label class="lb4">Date of Birth : </label>
+                                                <input class="l4" type="date" placeholder=" dd/mm/yyyy" name="dob" required/>
+                                            </div>
+                                            <div class="input-field">
+                                                <label>Gender : </label>
+                                                <label class="male">Male </label>
+                                                <input id="M" name="gender" type="radio" value="M">
+                                                <label class="female">Female </label>
+                                                <input id="F" name="gender" type="radio" value="F">
+                                                <label class="others">Others </label>
+                                                <input id="O" name="gender" type="radio" value="O">
+                                                <label class="occupation">Occupation : </label>
+                                                <input class="l5" id="occ" type="text" placeholder=" Eg: Teacher" name="occupation" required max="4" />
+                                            </div>
+                                            <div class="input-field">
+                                                <label>Email id : </label>
+                                                <input class="l6" type="email" placeholder=" Eg: name@example.com" name="email" required/>
+                                            </div>
+                                            <div class="input-field7">
+                                                <label>Password : </label>
+                                                <input class="l7" id="pswd" type="password" placeholder=" Enter a Password" name="pswd" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required />
+                                            </div>  
+                                            <div id="message">
+                                                <p id="letter" class="invalid">Password must contain a <b>lowercase</b> letter,</p>
+                                                <p id="capital" class="invalid">a <b>uppercase</b> letter,</p>
+                                                <p id="number" class="invalid">a <b>number</b></p>
+                                                <p id="length" class="invalid"> and minimum <br><b>of 8 characters.</b></p>
+                                            </div><br>                                    
+                                        </div>
+                                    </div>
+                                    <input class="subBtn" type="submit" value="Register" />
+                                </form>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div> 
+       
+
+        <script src="{{url_for('static',filename='js/RegisterScripts.js')}}" ></script>
+
+	</body>
+</html>

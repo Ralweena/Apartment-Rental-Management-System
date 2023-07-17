@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Payment Receipt</title>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/ReceiptStyle.css')}}">
+	</head>
+	<body>
+		<div class="box">
+			<nav class="navbar">
+                <div class="container">
+                    <a href="/TenantDashboard" class="lead"><i class="fa fa-arrow-left"></i></a>
+                </div>
+            </nav>
+        	<div class="receiptbox">
+    			<img src="{{url_for('static',filename='images/paymentSuccessful.png')}}" class="payment">
+            	<h1>PAYMENT SUCESSFUL!</h1>
+    			<form action="{{ url_for('Receipt', Tname=Tname, pay_id=pay_id, pay_date=pay_date, pay_amt=pay_amt) }}" method="get">
+                	<p>Name : {{ Tname }}</p>
+					<p>Payment Id : {{ pay_id }}</p>
+                	<p>Payment Date : {{ pay_date }}</p>
+                	<p>Amount : {{ pay_amt }}</p>
+    			</form>
+    		</div>
+		</div>
+    </body>
+</html>

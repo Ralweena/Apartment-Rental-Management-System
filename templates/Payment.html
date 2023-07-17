@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8"> 
+		<title>Rent Payment</title>
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+		<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{{url_for('static',filename='js/payment.js')}}"></script>
+		<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/PaymentStyle.css')}}">
+	</head>
+	<body>
+		<!--<div id="myModal" class="modal fade">
+    		<div class="modal-dialog">
+        		<div class="modal-content">
+            		<div class="modal-header">
+                		<h5 class="modal-title">We Only Accept Card Payments</h5>
+                		<button type="button" data-dismiss="modal"><i class="fa-solid fa-xmark"></i></button>
+            		</div>
+            		<div class="modal-body">
+						<p><img src="{{url_for('static',filename='images/cards.jpg')}}" alt="Image"></p>
+            		</div>
+        		</div>
+    		</div>
+		</div> -->
+		{% with messages = get_flashed_messages() %}
+  			{% if messages %}
+   		 		{% for message in messages %}
+					<p class="msg">{{message}}</p>
+    			{% endfor %}
+  			{% endif %}
+		{% endwith %}
+		{% if err %}  
+        	<p class="error"><strong>Error</strong>: {{ err }}</p>  
+    	{% endif %} 
+		<div class="payment">
+			<header>
+				<p><a href="#" onclick="history.back()"><i class="fa-solid fa-arrow-left"></i></a><i class="fa-solid fa-credit-card"></i>PAYMENT</p>
+			</header>
+			<div class="payment-box">
+				<form action="{{ url_for('Payment',aptNo=aptNo ,Tname=Tname, PhNo=PhNo, Uname=Uname, rentAmt=rentAmt, late_fee=late_fee, totAmt=totAmt) }}" method="post">
+					<table class="user-details">
+						<tr>
+							<th><h5>Personal Details</h5></th>
+							<th><h5>Card Details</h5></th>
+						</tr>
+						<tr>
+							<td class="name">
+								<p><label>Full Name :</label><input class="if1" type="text" name="name1" value='{{ Tname }}'  readonly/></p>
+							</td>
+							<td class="name">
+								<p><label>Card Holder Name :</label><input id="txtName" class="if1" type="text" placeholder=" Enter cardholder name" name="name2" required/></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p><label>Email :</label><input class="if2" type="email" name="email" value='{{ Uname }}' readonly/></p>
+							</td>
+							<td>
+								<p><label>Card Number :</label><input class="if2" type="number" placeholder=" Enter card number" name="cardNo" required/></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p><label>Phone No. :</label><input class="if3" type="text" name="phoneNo" maxlength="10" value='{{ PhNo }}' readonly/></p>
+							</td>
+							<td>
+								<p><label>Expiry Date :</label><input type="month" min="2000-01" value="2030-12" required/><label class="l8">CVV :</label><input class="if8" type="number" placeholder=" xxx" name="cvv" required/></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p><label>Apartment No. :</label><input class="if4" type="text" name="roomNo" value='{{ aptNo }}' maxlength="3" readonly/></p>
+							</td>
+							<td>
+								<p><label>Pay to :</label><input class="if1" type="text" name="name3" value=" Joey Rudolph Flynn" readonly/></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p><label>Rent Amount :</label><input class="if5" type="number" name="amount" value='{{ rentAmt }}' readonly/></p>
+							</td>
+							<td>
+								<p><label>Account No. :</label><input class="if3" type="text" name="acc-no" value="xxxxxx34981"  maxlength="11" readonly/></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p><label>Late fee :</label><input class="if6" type="number" name="latefee" value='{{ late_fee }}' readonly/></p>
+							</td>
+							<td>
+								<p><label>IFSC code :</label><input class="if3" type="text" name="ifs-code" value=" SBIN0005943" maxlength="11" readonly/></p>
+							</td>
+						</tr>
+						<tr class="tr7">
+							<td>
+								<p><label>Total Amount :</label><input class="if7" type="number" name="total" value='{{ totAmt }}' readonly/></p>
+							</td>
+							<td>
+								<p><label>Bank Name :</label><input class="if3" type="text" name="ifs-code" value=" State Bank of India"></p>
+							</td>
+						</tr>
+					</table>
+					<input type="submit" value="Pay" class="pay-btn" />
+					<input type="reset" value='Cancel' class="cancel-btn" />
+				</form>
+			</div>
+		</div>
+	</body>
+</html>

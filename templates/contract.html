@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Contract</title>
+		<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/contractStyle.css')}}">
+	</head>
+	<body>
+		<header> 
+			<nav>
+				<a class="back" href="\Details"><i class="fa-solid fa-arrow-left"></i> CONTRACT</a>
+			</nav>
+		</header>
+		<div class="container">
+			{% if msg7 %}  
+        		<p class="msg">{{msg7}}</p>  
+    		{% endif %}  
+			<div class="box">
+				<h4>RENTAL&emsp;AGREEMENT</h4>
+				<form action="{{ url_for('Contract',aptNo=aptNo, Date=Date, Tname=Tname, TFatherName=TFatherName, Uname=Uname, PAddress=PAddress, Date1=Date, rentAmt=rentAmt, Deposit=Deposit) }}" method="post">
+					<p>This RENTAL AGREEMENT is executed for Apartment <input type="number" value='{{ aptNo }}' name="aptno" class="if5" readonly/>   on <input type="date" value='{{ Date }}' name="date" readonly/>  through online by and between:<br><br>&emsp;&emsp;&emsp;&emsp;By :
+						<div class="owner-info">
+							<p>Joey Rudolph Flynn</p>
+							<p>S/o Robert Geraldo Flynn</p>
+							<p>'Flynn House', V P Road, Girgaon, Bengaluru.</p>
+						</div>
+					</p>
+					<p>&emsp;&emsp;&emsp;&emsp;And, in favour of:
+			    		<div class="tenant-info">
+			    			<p><input class="if1" type="text" name="TenantName" value='{{ Tname }}'  readonly/></p>
+							<p>S/o or D/o.<input class="if2" type="text" name="tenantfatherName" value='{{ TFatherName }}' readonly/></p>
+							<p><input class="if4" type="email" name="UserName" value='{{ Uname }}' readonly/></p>
+							<p>having a permanent address at <input class="if4" type="text" name="permanentaddress" value='{{ PAddress }}'  readonly/></p>
+			    		</div>
+					</p>
+					<p>The Owner is the absolute owner of the property situated at <u>' Rooftop  Apartments ', K K Road, Shanti Nagar, Bangalore</u> whereas the Tenant has requested the Owner to grant Rent with respect to the Schedule Premises and the Owner has agreed to rent out to the Tenant the Property with two-wheeler and four-wheeler parking space in the ground floor for residential purposes only, on the following TERMS and CONDITIONS:</p>
+					<p>1.&emsp;The rent in respect of the “Demised Premises” shall commence from <input type="date" value='{{ Date1 }}' name="start_date" readonly/> and shall be valid till <input type="date" name="end_date" required/>. Thereafter, the same may be extended further on mutual consent of both the parties.</p>
+					<p>2.&emsp;That the Tenant shall pay to the Owner a monthly rent of Rs.<input class="if6" value='{{ rentAmt }}' type="number" name="rent-amt" readonly/>, excluding electricity and water bill. The rent shall be paid on or before 7th day of each month without fail.</p>
+					<p>3.&emsp;That during the Rent period, in addition to the rental amount payable to the Owner, the Tenant shall pay for the use of electricity and water as per bills received from the authorities concerned directly.</p>
+					<p>4.&emsp;The Tenant will pay to the Owner an interest-free refundable security deposit of Rs.<input class="if6" value='{{ Deposit }}' type="number" name="deposit" readonly/> through online payment dated <input type="date" value='{{ Date1 }}' name="pay_date"readonly/> at the time of submitting the Rent Agreement.</p>
+					<p><input type="checkbox" id="terms" name="terms" value="Accepted" style="accent-color: #00203FFF;"> I Agree to the terms and conditions stated above.</p>
+
+					<input type="submit" class="btn" value="Submit" /> 
+                    <input type="reset" value='Reset' class="reset" />
+
+				</form>
+
+			</div class="box">
+		</div>
+	</body>
+</html>

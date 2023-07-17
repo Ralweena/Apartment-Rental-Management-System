@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+	    <meta charset="utf-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/base.css')}}">
+	    {% block script %}{% endblock %}
+    </head>
+    <body>
+        {% block header %}{% endblock %}
+            <nav class="sideNavbar">
+                <ul id="checklist">
+                    <li class="menu" id="admin"><a class="logo" href="/AdminDashboard">
+                        <i class="fa-solid fa-user-tie" style="font-size:24px"></i>
+                        <span class="nav-item">Admin Dashboard</span>
+                        <i class="fa-solid fa-bars" id="menu-bars" style="font-size:24px; padding-left: 26px;"></i></a>
+                    </li>
+                    <li class="menu"><a href="/TotalUsers">
+                        <i class="fa-solid fa-users" style="font-size:24px"></i>
+                        <span class="nav-item" id="usr">Users</span>
+                    </a></li>
+                    <li class="menu"><a href="/tenantReport">
+                        <i class="fa-solid fa-users" style="font-size:24px"></i>
+                        <span class="nav-item">Tenants</span>
+                    </a></li>
+                    <li class="menu"><a href="/ApartmentRooms">
+                        <i class="fa-solid fa-building" style="font-size:22px"></i>
+                        <span class="nav-item">Apartment Rooms</span>
+                    </a></li>
+                    <li class="menu"><a href="/RentStatus">
+                        <i class="fa-sharp fa-solid fa-coins" style="font-size:24px"></i>
+                        <span class="nav-item">Rent Status</span>
+                    </a></li>
+                    <li class="menu"><a href="/Backup">
+                        <i class="fa-solid fa-database" style="font-size:24px"></i>
+                        <span class="nav-item">Back Up Status</span>
+                    </a></li>
+                    <li class="logout"><a href="/AdminLogout">
+                        <i class="fa-solid fa-sign-out-alt" style="font-size:24px"></i>
+                        <span class="nav-item">Logout</span>
+                    </a></li>
+                </ul>
+            </nav>
+            {% block content %}
+            {% endblock %}
+    		
+    	{% block endscript %}
+        {% endblock%}
+    	
+    </body>
+</html>

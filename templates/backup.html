@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block title %}Tenant Backup{% endblock%}
+{% block script %}
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/TenantReportStyle.css')}}">
+{% endblock %}
+{% block content %} 
+		<header>
+			<nav class="navbar">
+				<ul class="nav-bar">
+					<li><a href="/RentStatus" class="previous"><i class="fa-solid fa-arrow-left"></i></a></li>
+					<li class="tenant"><p><i class="fa-solid fa-database"></i> Backup</p></li>
+				</ul>
+			</nav>
+		</header>
+		<section>
+			<table style="margin-top: 140px">
+  				<tr>
+					<th>Tenant Id</th>
+    				<th>First Name</th>
+					<th>Last Name</th>
+    				<th>Gender</th>
+    				<th>Phone No.</th>
+    				<th>Email</th>
+    				<th>Room No.</th>
+  				</tr>
+  				{% for row in backup_status %}  
+					<tr>
+						{% for col in row %}
+							<td>{{row[col]}}</td>
+						{% endfor %}
+					</tr> 
+				{% endfor %}
+			</table>
+		</section>
+{% endblock %}
+
+{% block endscript %}		
+	<script type="text/javascript" src="{{url_for('static',filename='js/Scripts.js')}}"></script>
+{% endblock %}

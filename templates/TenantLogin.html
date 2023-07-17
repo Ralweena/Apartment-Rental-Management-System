@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Login Page</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/LoginStyle.css')}}">
+	</head>
+	<body>
+		{% if error %}  
+        	<p class="error"><strong>Error</strong>: {{error}}</p>  
+    	{% endif %} 
+		{% if log %}  
+        	<p class="log">{{log}}</p>  
+    	{% endif %}  
+		<div class="box">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="/" class="lead"><i class="fa fa-arrow-left"></i> BACK</a>
+                </div>
+            </nav>
+
+    		<div class="loginbox">
+    			<img src="{{url_for('static',filename='images/user_icon.jpg')}}" class="user">
+    			<h1>Tenant Sign In</h1>
+    			<form action="{{ url_for('TenantLogin') }}" method="post">
+    				<p>Email : </p>
+    				<input type="email" name="username" placeholder="Enter your email" required/>
+    				<p>Password : </p>
+    				<input type="password" name="pswd1" placeholder="Enter Password" required />
+    				<input type="submit" value="Sign In"><br>
+    				<ul>
+    					<li><a href="/TenantRegister">New Member? Register yourself here..</a></li>
+    				</ul>
+    			</form>
+    		</div>
+    	</div>
+
+	</body>
+</html>

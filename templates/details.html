@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Login Page</title>
+	    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	    <link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/detailsStyle.css')}}">
+	</head>
+	<body>
+		{% if Error %}  
+        	<p class="error"><strong>Error</strong>: {{Error}}</p>  
+    	{% endif %} 
+		<div class="box">
+            <nav class="navbar">
+                <div class="container">
+                    <a href="#" class="lead" onclick="history.back()"><i class="fa fa-arrow-left" style="font-size: 22px;"></i> BACK</a>
+                </div>
+            </nav>
+
+    		<div class="formbox">
+    			<h1>Please Fill Out The Details</h1>
+    			<form action="{{ url_for('Details') }}" method="post">
+    				<p>Username : 
+    				<input type="email" name="Username" placeholder="Enter your email" required/></p>
+    				<p>Apartment No. : 
+    				<input type="number" name="aptNo" placeholder="  Eg : 152" required min=3/></p>
+                    <p>Father Name : 
+    				<input type="text" name="TFatherName" placeholder="Enter your Father's Name" required/></p>
+    				<p>Address : 
+    				<input type="text" name="PerAddr" placeholder="Enter your Permanent Address" required /></p>
+    				<input type="submit" value="Submit"><br>
+    			</form>
+    		</div>
+    	</div>
+
+	</body>
+</html>
