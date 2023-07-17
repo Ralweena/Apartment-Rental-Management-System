@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% block title %}Admin Dashboard{% endblock%}
+{% block script %}
+	<script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="{{url_for('static',filename='css/AdminDashStyle.css')}}">
+{% endblock %}
+{% block content %} 
+	<section id="dashboard" class="cards">
+		{% with messages2 = get_flashed_messages() %}
+  			{% if messages2 %}  
+   				{% for message in messages2 %}
+					<p class="msg">{{ message }}</p>
+    			{% endfor %}
+  			{% endif %}
+		{% endwith %}
+			<div class="card-single">
+				<div>
+					<h1>{{ tot_blck }}</h1>
+					<span>Total Apartment-blocks</span>
+				</div>
+				<div>
+					<i id="fa1" class="fa-solid fa-city"></i>
+				</div>
+			</div>
+			<div class="card-single">
+				<div>
+					<h1>9</h1>
+					<span>Total floors per block</span>
+				</div>
+				<div>
+					<i id="fa2" class="fa-solid fa-building"></i>
+				</div>
+			</div>
+			<div class="card-single">
+				<div>
+					<h1>{{ tot_apt }}</h1>
+					<span class="subheading">Total Apartments</span>
+				</div>
+				<div>
+					<i id="fa3" class="fa-solid fa-building"></i>
+				</div>
+			</div>
+			<div class="card-single">
+				<div>
+					<h1>{{ occ_apts }}</h1>
+					<span class="subheading">Occupied Apartments</span>
+				</div>
+				<div>
+					<i id="fa4" class="fa-solid fa-building"></i>
+				</div>
+			</div>
+			<div class="card-single">
+				<div>
+					<h1>{{ unocc_apts }}</h1>
+					<span class="subheading">Unoccupied Apartments</span>
+				</div>
+				<div>
+					<i id="fa5" class="fa-solid fa-building"></i>
+				</div>
+			</div>
+			<div class="card-single">
+				<div>
+					<h1>{{ t_tenants }}</h1>
+					<span>Total Tenants</span>
+				</div>
+				<div>
+					<i id="fa6" class="fa-solid fa-users"></i>
+				</div>
+			</div>
+			<div class="card-single">
+				<div>
+					<h1>{{ t_users }}</h1>
+					<span>Total Users</span>
+				</div>
+				<div>
+					<i id="fa7" class="fa-solid fa-users"></i>
+				</div>
+			</div>
+			<div class="card-single">
+				<div>
+					<h1><i class="fa-solid fa-indian-rupee-sign"></i> {{tot_rent}}</h1>
+					<span>Total Rent Collected</span>
+				</div>
+				<div>
+					<i id="fa8" class="fa-solid fa-coins"></i>
+				</div>
+			</div>
+	</section>
+{% endblock %}
+{% block endscript %}
+<script type="text/javascript" src="{{url_for('static',filename='js/AdminDashScripts.js')}}"></script>
+{% endblock %}
